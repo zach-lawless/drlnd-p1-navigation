@@ -16,6 +16,8 @@ The hyperparameters used during training are as follows:
 * Learning rate: 0.0005
 * Update every (how often to retrain the target network): 4 steps
 
+In general, I was able to reuse a lot of material from the DQN lab in the Udacity Reinforcement Learning Nanodegree curriculum, making alterations to the model, agent, replay buffer, and DQN functionality to fit the Unity environment.
+
 ## Plot of rewards
 
 The plot below shows the agent's learning progress over time.
