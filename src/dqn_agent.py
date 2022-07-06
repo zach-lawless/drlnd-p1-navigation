@@ -4,8 +4,8 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-from model import QNetwork
-from replay_buffer import ReplayBuffer
+from .model import QNetwork
+from .replay_buffer import ReplayBuffer
 
 BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 64         # minibatch size
@@ -38,7 +38,7 @@ class Agent():
         self.optimizer = optim.Adam(self.qnetwork_local.parameters(), lr=LR)
 
         # Replay memory
-        self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed)
+        self.memory = ReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, seed, device)
         
         # Initialize time step (for updating every UPDATE_EVERY steps)
         self.t_step = 0
